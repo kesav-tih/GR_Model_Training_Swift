@@ -39,7 +39,7 @@ srun --nodes=1 --ntasks=1 -w "$head_node" bash -c "mkdir output_${SLURM_JOBID}"
 srun --nodes=${SLURM_NNODES} --ntasks=${SLURM_NNODES} sg docker -c 'docker rm -f kesav_ddp_train_swift || true'
 
 # Run new container
-srun --nodes=${SLURM_NNODES} --ntasks=${SLURM_NNODES} sg docker -c 'docker run --shm-size=32g --rm --net=host --gpus all \
+srun --nodes=${SLURM_NNODES} --ntasks=${SLURM_NNODES} sg docker -c 'docker run --shm-size=256g --rm --net=host --gpus all \
 --name kesav_ddp_train_swift \
 -e WORLD_SIZE=${WORLD_SIZE} \
 -e RANK=${SLURM_PROCID} \
@@ -68,7 +68,7 @@ torchrun \
     --dataloader_num_workers 16 \
     --torch_dtype bfloat16 \
     --num_train_epochs 4 \
-    --per_device_train_batch_size 4 \
+    --per_device_train_batch_size 12 \
     --per_device_eval_batch_size 4 \
     --learning_rate 1e-5 \
     --gradient_accumulation_steps 1 \
@@ -83,8 +83,11 @@ torchrun \
     --report_to wandb \
     --model_author ModelScope \
     --model_name molmo-docvqa \
-    --deepspeed zero2"'    
+    --max_pixels 4194304 \
+    --deepspeed zero3"'    
 
 # Removed the option --save_total_limit ( default is None, but can specify how much to save)
 #     --resume_from_checkpoint /projects/data/vision-team/venkat_kesav/GR_Model_Training_with_Swift/output_5115/v0-20250525-063349/checkpoint-6200 \
 #     --model allenai/Molmo-7B-O-0924 \
+# --max_pixels 16777216 \
+# --per_device_train_batch_size 12 \ # Expeirment with 12 later. 
