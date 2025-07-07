@@ -28,6 +28,7 @@ RUN apt-get update && \
         software-properties-common \
         tzdata \
         fonts-noto \
+	ca-certificates \
         keychain && \
     ln -fs /usr/share/zoneinfo/$TZ /etc/localtime && \
     dpkg-reconfigure --frontend noninteractive tzdata && \
@@ -38,6 +39,7 @@ RUN apt-get update && \
         python3.11-venv \
         python3.11-dev \
         python3-pip && \
+    update-ca-certificates && \
     rm -rf /var/lib/apt/lists/*  # Cleanup
 
 # 2) Set Python 3.11 as the default
@@ -66,9 +68,9 @@ RUN python3 -m venv .venv && \
     . .venv/bin/activate && \
     pip install --upgrade pip 
 
-# 5) Clone the ms-swift repo and install dependencies
-RUN https://github.com/SaiMadhusudan/ms-swift-evaluation.git  && \
-    cd ms-swift && \
+# 5) Clone the ms-swift repo and install 
+RUN git clone https://github.com/SaiMadhusudan/ms-swift-evaluation.git  && \
+    cd ms-swift-evaluation && \
     pip install -e .
 
 ENV PYTHONPATH=${PYTHONPATH}:/home/${USERNAME}/.local/bin

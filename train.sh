@@ -5,6 +5,7 @@ USERNAME=${USERNAME:-venkat_kesav}
 
 # Activate the virtual environment
 source /home/${USERNAME}/.venv/bin/activate
+
 # 22GiB
 # You can refer to `https://github.com/QwenLM/Qwen2.5-VL` for the meaning of the `MAX_PIXELS` parameter.
 # 1003520 = 1280 * 28 * 28

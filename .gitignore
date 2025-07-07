@@ -11,3 +11,4 @@ models
 output_*
 wandb
 *.tar
+openvision
