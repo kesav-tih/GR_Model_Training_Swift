@@ -409,4 +409,6 @@ Key CLI flags:
 > SLURM grabs 1 node × 8 GPUs (or more if you ask), loads `swift_img:tr_and_wb_fix`, spins up `kesav_ddp_train_swift`, and `torchrun` fine-tunes Molmo-7B. All logs stream to `error_log_<jobid>.txt` and `output_log_<jobid>.txt`; checkpoints + metrics land in `output_<jobid>/` beside the script. 
 
 
-
+## 8. Documentations
+- [Model Fine-Tuning using Model Scope Swift - Google Docs](https://docs.google.com/document/d/1HJ7tioKCBjY7EVoclVqjEjWlY7Z_OEbMcHjC3xBSSzQ/edit?usp=sharing)
+- [Fine-Tuning Expeirments - Google Sheets](https://docs.google.com/spreadsheets/d/1wSA1CD86wMAxUTG6Au3ozy8xsaWp30DiFpzxYeRxNN0/edit?gid=0#gid=0)
