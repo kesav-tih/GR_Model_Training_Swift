@@ -1,11 +1,19 @@
 Author: hrithiksagar-tih 
-Date: 2025-05-20
+
+Date: 2025-07-07
+
 Title: Molmo-7B-O-0924 fine-tuning with Swift
+
 Description: This document provides a comprehensive guide on how to run the Molmo-7B-O-0924 fine-tuning job using Swift, including setup, monitoring, and troubleshooting tips.
+
 Tags: [Molmo-7B-O-0924, Swift, fine-tuning, SLURM, Docker, PyTorch, training job]
+
 Version: 1.0
+
 Status: draft
+
 Last_updated: 2025-05-20
+
 Last_updated_by: hrithiksagar-tih
 
 ---
