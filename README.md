@@ -1,4 +1,4 @@
-**Author**: @hrithiksagar-tih 
+**Author**: [@hrithiksagar-tih](https://github.com/hrithiksagar-tih)
 
 **Date**: 2025-07-07
 
@@ -14,7 +14,7 @@
 
 **Last_updated**: 2025-07-07
 
-**Last_updated_by**: @hrithiksagar-tih
+**Last_updated_by**: [@hrithiksagar-tih](https://github.com/hrithiksagar-tih)
 
 ---
 # Molmo-7B-O-0924 fine-tuning with Swift
