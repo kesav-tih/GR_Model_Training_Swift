@@ -90,4 +90,4 @@ torchrun \
 #     --resume_from_checkpoint /projects/data/vision-team/venkat_kesav/GR_Model_Training_with_Swift/output_5115/v0-20250525-063349/checkpoint-6200 \
 #     --model allenai/Molmo-7B-O-0924 \
 # --max_pixels 16777216 \
-# --per_device_train_batch_size 12 \ # Expeirment with 12 later. 
+# --per_device_train_batch_size 12 \ # Expeirment with 14 later. 
